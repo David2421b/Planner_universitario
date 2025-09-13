@@ -1,0 +1,7 @@
+.venv
+.idea
+
+firebase_config.py
+__pycache__
+
+notas.txt
