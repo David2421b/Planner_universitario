@@ -5,3 +5,7 @@ firebase_config.py
 __pycache__
 
 notas.txt
+@firebase_config
+
+node_modules
+react
