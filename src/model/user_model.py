@@ -1,5 +1,4 @@
 import sys
-import os
 sys.path.append(".")
 
 from config.firebase_config import db, auth
