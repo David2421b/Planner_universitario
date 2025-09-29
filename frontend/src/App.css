@@ -1,1 +1,55 @@
-
+.padre{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.tamaño-imagen{
+    width: 50%;
+    height: 400px;
+    margin-top: 50px;
+}
+.estilo-foto-usuario{
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.cajatexto{
+    background-color: #cccccc40;
+    border-color: slategray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+}
+.cajatexto:focus{
+    outline: 1px solid #057465;
+    box-shadow: 0 0 10px  #057465;
+    
+}
+.btnform{
+    background-color: #006d6f;
+    border-color: slategray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    color: white;
+}
+.texto{
+    font-size: 15px;
+    color: slategray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+}
+.btnswicth{
+    background-color:#057465 ;
+    border-radius: 30px;
+    padding: 8px;
+    color: white;
+    font-size: 16px;
+}

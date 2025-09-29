@@ -1,7 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import imagen from '../assets/logoplaner.png'
+import imagenlogousuario from '../assets/logousuario.png'
+ import appfirebase from '../credenciales'
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
+
+const auth= getAuth(appfirebase)
+
 
 const Login = () => {
+
+    const[registrando, setRegistrando]= useState(false)
+    const funAutenticacion= async(e) =>{
+        e.preventDefault()
+        const correo= e.target.email.value;
+        const contraseña= e.target.password.value;
+        console.log(correo)
+        console.log(contraseña)
+        
+        if (registrando) {
+            await createUserWithEmailAndPassword(auth, correo, contraseña)
+        }
+        else{
+            await signInWithEmailAndPassword(auth, correo, contraseña)
+        }
+
+
+    }
+
+   
+
     return (
         <div className='container'> 
             <div className="row">
@@ -9,12 +36,14 @@ const Login = () => {
                 <div className="col-md-4">
                     {/* Aquí va tu formulario después */}
                     <div className="padre">
-                        <div className="card card-body">
-                            <form >
-                                <input type="text" placeholder='Ingresar Email' />
-                                <input type="password" placeholder='Ingresar contraseña' />
-                                <button>registrarse</button>
+                        <div className="card card-body shadow-lg" >
+                            <img src={imagenlogousuario} alt='' className='estilo-foto-usuario'/>
+                            <form onSubmit={funAutenticacion}>
+                                <input type="text" placeholder='Ingresar Email'  className='cajatexto' id='email' />
+                                <input type="password" placeholder='Ingresar contraseña' className='cajatexto' id='password' />
+                                <button className='btnform'>{registrando ? "Registrate" : "Inicia sesion"}</button>
                             </form>
+                            <h4  className='texto'>{registrando ? "Si ya tienes cuenta" : "No tienes cuenta"}<button className='btnswicth' onClick={()=> setRegistrando(!registrando)}> {registrando ? "Inicia sesion" : "Registrate"}</button></h4>
                         </div>
                     </div>
                 
