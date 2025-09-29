@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import imagen from '../assets/logoplaner.png'
 import imagenlogousuario from '../assets/logousuario.png'
- import appfirebase from '../credenciales'
+import appfirebase from '../credenciales'
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
 
 const auth= getAuth(appfirebase)
@@ -18,17 +18,25 @@ const Login = () => {
         console.log(contraseña)
         
         if (registrando) {
-            await createUserWithEmailAndPassword(auth, correo, contraseña)
+            try {
+                await createUserWithEmailAndPassword(auth, correo, contraseña)
+            } catch(error) {
+                alert("Asegurese que la contraseña tenga mas de 8 caracteres")
+            }
         }
         else{
-            await signInWithEmailAndPassword(auth, correo, contraseña)
+            try {await signInWithEmailAndPassword(auth, correo, contraseña)
+
+            }  catch (error) {
+                alert("El correo o la contraseña son incorrectos")
+
+            }
+                
         }
 
 
     }
-
-   
-
+    
     return (
         <div className='container'> 
             <div className="row">
