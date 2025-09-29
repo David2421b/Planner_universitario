@@ -38,32 +38,21 @@ const Login = () => {
     }
     
     return (
-        <div className='container'> 
-            <div className="row">
-               {/*columna de formulario*/}
-                <div className="col-md-4">
+        <div className='container-login'> 
+            <div className="padre">
+                <div className="card card-body shadow-lg">
                     {/* Aquí va tu formulario después */}
-                    <div className="padre">
-                        <div className="card card-body shadow-lg" >
-                            <img src={imagenlogousuario} alt='' className='estilo-foto-usuario'/>
-                            <form onSubmit={funAutenticacion}>
-                                <input type="text" placeholder='Ingresar Email'  className='cajatexto' id='email' />
-                                <input type="password" placeholder='Ingresar contraseña' className='cajatexto' id='password' />
-                                <button className='btnform'>{registrando ? "Registrate" : "Inicia sesion"}</button>
-                            </form>
-                            <h4  className='texto'>{registrando ? "Si ya tienes cuenta" : "No tienes cuenta"}<button className='btnswicth' onClick={()=> setRegistrando(!registrando)}> {registrando ? "Inicia sesion" : "Registrate"}</button></h4>
-                        </div>
-                    </div>
-                
-
-                </div>
-
+                    <img src={imagen} alt='' className='estilo-foto-usuario'/>
+                        <form onSubmit={funAutenticacion}>
+                            <input type="text" placeholder='Ingresar Email'  className='cajatexto' id='email' />
+                            <input type="password" placeholder='Ingresar contraseña' className='cajatexto' id='password' />
+                            <button className='btnform'>{registrando ? "Registrate" : "Inicia sesion"}</button>
+                        </form>
+                        <h4  className='texto'> {registrando ? "Si ya tienes cuenta" : "No tienes cuenta"}
+                            <button className='btnswicth' onClick={()=> setRegistrando(!registrando)}> 
+                                {registrando ? "Inicia sesion" : "Registrate"}</button></h4>
         
-            {/*columna mas grande*/ }
-            <div className="col-md-8">
-                <img src={imagen} alt="" className='tamaño-imagen' />
-
-            </div>
+                </div>        
         </div>
         </div>
     ) 

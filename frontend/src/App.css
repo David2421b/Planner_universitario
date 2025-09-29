@@ -1,7 +1,23 @@
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+
+}
+
+
 .padre{
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 100%;
+    ;
+}
+.carr{
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
 }
 .tamaño-imagen{
     width: 50%;
@@ -45,6 +61,7 @@
     color: slategray;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5px;
+    text-align: center;
 }
 .btnswicth{
     background-color:#057465 ;
@@ -52,4 +69,5 @@
     padding: 8px;
     color: white;
     font-size: 16px;
+    margin-left: 8px;
 }
