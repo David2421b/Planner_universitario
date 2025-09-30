@@ -21,7 +21,7 @@ class User:
                      "user_rol": role}
         db.child("users").child(user_id).set(user_data)
         return user
-
+                    
     @staticmethod
     def login(email, password):
         user = auth.sign_in_with_email_and_password(email, password) #Se usa el metodo para consutlar en authentication por email and password
