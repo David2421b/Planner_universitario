@@ -38,11 +38,12 @@ class Mensajes:
             data = doc.to_dict()
 
             if change.type.name == "ADDED":
-                
+
 
     @staticmethod
     def escucha_chat(id_chat, firestore_cliente):
         mensajes_query = firestore_cliente.colleccion("chats").document(id_chat).collection("mensajes")
+        callback_done = mensajes_query.on_snapshot(on_snapshot)
 
 
 CONVERSACION_ID = "prueba_chat_entre_laura_y_pedro" 
