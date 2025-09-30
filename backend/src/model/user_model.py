@@ -22,10 +22,3 @@ class User:
     def get_users():
         return db.child("users").get().val()
     
-
-    
-valor = int(input("Ingrese 1 o 2: "))
-if valor == 1:
-    UserController.create_user("davidh1@gmail.com", "123456789", "David")
-else:
-    print(UserController.get_users())

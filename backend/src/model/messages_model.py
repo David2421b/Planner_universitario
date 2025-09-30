@@ -1,3 +1,4 @@
+import time
 import sys
 sys.path.append(".")
 
@@ -26,6 +27,22 @@ class Mensajes:
         except Exception as e:
             print(f"EL error es {e}")
 
+    @staticmethod
+    def on_snapshot(col_snapshot, changes, read_time):
+        print("-" * 50)
+        print(f"[{time.strftime('%H:%M:%S')}] ¡CAMBIO DETECTADO EN EL CHAT!")
+        print(f"Total de mensajes en el chat: {len(col_snapshot)}")
+
+        for change in changes:
+            doc = change.document
+            data = doc.to_dict()
+
+            if change.type.name == "ADDED":
+                
+
+    @staticmethod
+    def escucha_chat(id_chat, firestore_cliente):
+        mensajes_query = firestore_cliente.colleccion("chats").document(id_chat).collection("mensajes")
 
 
 CONVERSACION_ID = "prueba_chat_entre_laura_y_pedro" 
