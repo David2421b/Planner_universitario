@@ -1,11 +1,9 @@
-import firebase_admin
-
 import sys
 sys.path.append(".")
 
 from config.firebase_config import db, auth, admin_auth
 
-class UserController:
+class User:
     @staticmethod
     def create_user(email, password, name, role):
         user = auth.create_user_with_email_and_password(email, password) #Se usa el meto para crear un nuevo usuario en unthentication con email and password
