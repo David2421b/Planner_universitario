@@ -1,18 +1,16 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
 
 //importar los modulos de firebase
-import appfirebase from '../src/credenciales';
+import appfirebase from '../src/credenciales'
 //esado de la autenticacion del registro
-import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth'
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
 // importamos los componentes
-import Login from '../src/componentes/Login';
-import HomeProfesor from './componentes/Homeprofesor';
-import HomeEstudiante from './componentes/Homestudiante';
-import Layout from './componentes/Layout';
-import Calendario from './componentes/Calendario';
-import Actividades from './componentes/Actividades';
+import Login from '../src/componentes/Login'
+import HomeProfesor from './componentes/Homeprofesor'
+import HomeEstudiante from './componentes/Homestudiante'
+
 
 const auth = getAuth(appfirebase)
 const db = getFirestore(appfirebase)
