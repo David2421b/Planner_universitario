@@ -1,6 +1,7 @@
 .venv
 .idea
 
+planner-universitario-db-firebase-adminsdk-fbsvc-de1f6f0d21.json
 firebase_config.py
 __pycache__
 
@@ -10,3 +11,4 @@ planner-universitario-db-firebase-adminsdk-fbsvc-1210edc333.json
 
 node_modules
 react
+
